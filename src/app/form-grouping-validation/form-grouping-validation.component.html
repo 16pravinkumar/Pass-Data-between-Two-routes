@@ -1,0 +1,20 @@
+<form  [formGroup]="userData" action="" (submit)="handleFormGroupData($event)">
+  <input formControlName="name" type="
+  text" placeholder="Enter your name" />
+
+<!-- Error message for name -->
+<p style="color: red;" *ngIf="name?.invalid && name?.touched">
+  <span *ngIf="name?.errors?.['required']">Name is required.</span>
+  <span *ngIf="name?.errors">Name must be at least 5 characters long.</span>
+</p>
+
+  <input formControlName="email" type="text"  placeholder="Enter your email" name="" id="">
+
+  <p style="color: red;" *ngIf="email?.invalid  && email?.touched">
+      <span>Email is not valid</span>
+  </p>
+  <input formControlName="password" type="text"  placeholder="Enter your password" name="" id="">
+  <!-- <button type="submit" [disabled]="!userData.valid">Submit</button> -->
+  <button type="submit" >Submit</button>
+  <button type="submit" [disabled]="!userData.valid" (click)="updateProfile()" >Update</button>
+</form>
