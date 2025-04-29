@@ -32,5 +32,34 @@ export class HomeComponent {
       queryParams: { data: studentString }
     });
   }
+
+
+
+
+  // dynamic routing
+  users =[
+    {
+      id: 1,
+      name: 'Alex',
+      age : 24
+    },
+    {
+      id: 2,
+      name: 'Bob',
+      age : 24
+    },
+    {
+      id: 3,
+      name: 'Mathew',
+      age : 35
+    },
+    {
+      id: 4,
+      name: 'BoB Marli',
+      age : 24
+    },
+  ]
+
+  
   
 }

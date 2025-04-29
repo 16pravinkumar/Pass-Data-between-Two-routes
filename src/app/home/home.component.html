@@ -2,4 +2,15 @@
 <!-- <a [routerLink]="['/profile']" [queryParams]="{ name: 'Pravin' }">Go to profile</a> -->
 
 
-<button (click)="navigateToProfile(student)">Go to Profile</button>
+<!-- <button (click)="navigateToProfile(student)">Go to Profile</button> -->
+
+
+
+<!-- All about dynamic routing  -->
+
+
+<h1>User List</h1>
+
+@for (user of users; track user.id) {
+  <li><a routerLink="user/{{user.id}}/{{user.name}}"> {{user.name}} </a></li>
+}
