@@ -1,0 +1,31 @@
+<form #userDetails="ngForm" (ngSubmit)="handleUserData(userDetails)">
+  <!-- Name Field -->
+  <input 
+    type="text" 
+    placeholder="Name" 
+    #userName="ngModel" 
+    minlength="3" 
+    required 
+    name="userName" 
+    ngModel>
+  <div *ngIf="userName.invalid && userName.touched" style="color: red;">
+    <p *ngIf="userName.errors?.['required']">Name is required</p>
+    <p *ngIf="userName.errors?.['minlength']">Name must be at least 3 characters</p>
+  </div>
+
+  <!-- Range Field -->
+  <label>Age (1–10):</label>
+  <input 
+    type="range" 
+    name="range" 
+    ngModel 
+    required 
+    min="1" 
+    max="10" 
+    #range="ngModel">
+  <div *ngIf="range.invalid && range.touched" style="color: red;">
+    <p *ngIf="range.errors?.['required']">Range (Age) is required</p>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
